@@ -1,0 +1,13 @@
+main {
+    display: flex;
+    /* space between will push left & right items to the far edges, and space evenly other items between the 2*/
+    /* justify-content: space-between; */
+    /* or, push everything to the right */
+    justify-content: center;
+    align-items: center;
+    padding: 30px, 10%
+}
+
+button {
+    margin-left: 10px;
+}

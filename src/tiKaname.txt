@@ -1,0 +1,20 @@
+1. index.js: κάνε render to App στη θέση 'root'
+    import App from './App';
+    ReactDOM.render( <App />,  document.getElementById('root') );
+2. App.js: 
+    παίρνει το array of objects 'todosData' και το κάνει state (στον constructor): 
+        import todosData from './components/todosData'
+        this.state = { todos: todosData }
+    περνάει σε μια const ένα component με props τα objects του todosData
+    επίσης, περνάει και ένα reference στη μέθοδο handleChange
+        const todoItems = this.state.todos.map(item => <ToDoItem key={item.id} item={item} />)
+    και τέλος, στη render καλεί αυτή την const
+    To toDoItem component, ξέροντας τι id εχει, καλεί την handleChange με το σωστό id (οταν υπάρχει onChange event στο input), και αυτή η handleChange θα αλλάξει το state του input
+
+
+    // https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
+    // https://reactjs.org/blog/2018/03/29/react-v-16-3.html#component-lifecycle-changes
+
+    FORMS:
+    το state εχει πλέον την τιμή του input - οπότε κάνουμε this.setState (event.target.name) = (event.target.value)
+    
